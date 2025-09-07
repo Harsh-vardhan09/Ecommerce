@@ -1,44 +1,33 @@
 import React from "react";
-import {Routes,Route,Link } from "react-router-dom";
-import Hero from "./Hero";
-import AboutUs from "./AboutsUs"
-import Services from "./Services";
-import Products from "./Product";
-import ContactUs from "./ContactUs";
+import { Routes, Route, Link } from "react-router-dom";
+
 
 // import "./Navbar.css"; 
 
 const Navbar = () => {
     return (
-        <nav className="navbar" >
-           
-            
-            <ul className="nav-links" style={{display:"flex",justifyContent:"space-between"}}>
+    <nav className="bg-gray-800 p-4 text-white font-mono " >
+            <ul className="flex justify-between items-center font-mono ">
                 <li>
-                    <Link to="/" ><h2 className="logo">E-Commerce</h2></Link>
+                    <Link to="/">
+                        <h2 className="text-2xl font-bold text-teal-400 font-mono">E-Commerce</h2>
+                    </Link>
                 </li>
-                <li>
-                    <Link to="/AboutUs">About Us</Link>
-                </li>
-                <li>
-                    <Link to="/Services">Services</Link>
-                </li>
-                <li>
-                    <Link to="/Products">Products</Link>
-                </li>
-                <li>
-                    <Link to="/ContactUs">Contact Us</Link>
+                <li className="flex space-x-6 font-mono">
+                    <Link to="/AboutUs" className="hover:text-teal-400 transition-colors duration-200 font-mono">
+                        About Us
+                    </Link>
+                    <Link to="/Services" className="hover:text-teal-400 transition-colors duration-200 font-mono">
+                        Services
+                    </Link>
+                    <Link to="/Products" className="hover:text-teal-400 transition-colors duration-200 font-mono">
+                        Products
+                    </Link>
+                    <Link to="/ContactUs" className="hover:text-teal-400 transition-colors duration-200 font-mono">
+                        Contact Us
+                    </Link>
                 </li>
             </ul>
-            <Routes>
-                <Route path="/" element={<Hero/>} />
-                <Route path="/AboutUs"  element={<AboutUs/>} />
-                <Route path="/Services" element={<Services/>} />
-                <Route path="/Products" element={<Products/>} />
-                <Route path="/ContactUs" element={<ContactUs/>} />
-               
-            </Routes>
-           
         </nav>
     );
 };
